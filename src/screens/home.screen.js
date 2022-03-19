@@ -1,10 +1,9 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {FlatList, View} from 'react-native';
-import FlatComponent from './components/FlatComponent';
-import {filmes} from './data/filmes';
+import FlatComponent from '../components/FlatComponent';
+import {filmes} from '../data/filmes';
 
-const Tela1 = () => {
+const HomeScreen = () => {
   return (
     <View>
       <FlatList
@@ -15,4 +14,4 @@ const Tela1 = () => {
   );
 };
 
-export default Tela1;
+export default HomeScreen;

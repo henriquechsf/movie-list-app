@@ -6,7 +6,7 @@ const FlatComponent = ({data}) => {
   const navigation = useNavigation();
 
   const navegar = () => {
-    navigation.navigate('Tela2', {data});
+    navigation.navigate('Detalhe', {data});
   };
 
   return (

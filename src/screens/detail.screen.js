@@ -2,7 +2,7 @@ import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 
-const Tela2 = () => {
+const DetailScreen = () => {
   const route = useRoute();
 
   const data = route.params.data;
@@ -19,7 +19,7 @@ const Tela2 = () => {
   );
 };
 
-export default Tela2;
+export default DetailScreen;
 
 const styles = StyleSheet.create({
   image: {
