@@ -1,6 +1,6 @@
-import {Container, Flex} from 'native-base';
+import {Flex} from 'native-base';
 import React from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList} from 'react-native';
 import FlatComponent from '../components/FlatComponent';
 import {filmes} from '../data/filmes';
 

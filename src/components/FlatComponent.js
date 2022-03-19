@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
-import {Badge, Heading, HStack, Image, Stack, VStack} from 'native-base';
+import {Badge, Heading, HStack, Image, VStack} from 'native-base';
 import React from 'react';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 
 const FlatComponent = ({data}) => {
   const navigation = useNavigation();
@@ -20,11 +20,13 @@ const FlatComponent = ({data}) => {
         backgroundColor="white">
         <Image source={{uri: data.image}} style={styles.image} alt="Título" />
         <VStack space={2} py={2} justifyContent="space-between">
-          <Heading>{data.filme}</Heading>
-          <HStack space={2}>
-            <Badge colorScheme="danger">{data.estilo}</Badge>
-            <Badge colorScheme="success">{data.ano}</Badge>
-          </HStack>
+          <Heading size="md">{data.filme}</Heading>
+          <VStack space={2} width="96px">
+            <Badge colorScheme={data.badge}>{data.estilo}</Badge>
+            <Badge colorScheme="primary" variant="outline">
+              {data.ano}
+            </Badge>
+          </VStack>
         </VStack>
       </HStack>
     </TouchableOpacity>
