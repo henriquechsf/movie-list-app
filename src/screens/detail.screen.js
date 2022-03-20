@@ -9,22 +9,27 @@ import {
   Text,
   VStack,
 } from 'native-base';
-import React from 'react';
-import {StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, TouchableOpacity} from 'react-native';
+import ImageView from 'react-native-image-viewing';
 
 const DetailScreen = () => {
   const route = useRoute();
 
   const data = route.params.data;
 
+  const [visible, setIsVisible] = useState(false);
+
   return (
     <Flex padding={2}>
       <HStack backgroundColor="white">
-        <Image
-          source={{uri: data.image}}
-          style={styles.image}
-          alt="Descrição da imagem"
-        />
+        <TouchableOpacity onPress={() => setIsVisible(true)}>
+          <Image
+            source={{uri: data.image}}
+            style={styles.image}
+            alt="Descrição da imagem"
+          />
+        </TouchableOpacity>
         <VStack paddingX={2} justifyContent="space-between" padding={2}>
           <Heading>{data.filme}</Heading>
           <Stack space={2}>
@@ -39,6 +44,12 @@ const DetailScreen = () => {
       <Text marginTop={4} paddingX={2} textAlign="justify">
         {data.descricao}
       </Text>
+      <ImageView
+        images={[{uri: data.image}]}
+        imageIndex={0}
+        visible={visible}
+        onRequestClose={() => setIsVisible(false)}
+      />
     </Flex>
   );
 };
